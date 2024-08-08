@@ -4,7 +4,7 @@ This github repository contains all the iterations of programs, documentation an
 
 Author : **Sanjeev Subrahmaniyan S B**
 <br>
-E-mail = ee23b102@smail.iitm.ac.in
+Contact me at ee23b102@smail.iitm.ac.in
 
 ## Table of contents
 A brief desciption of all the different programs in each week is as follows:
