@@ -1,5 +1,6 @@
 from typing import List, Union
 
+
 def matrix_shape(matrix: List[List]) -> List:
     """Returns the shape of the matrix.
 
@@ -27,16 +28,14 @@ def isnum(x: Union[int, float, complex]) -> None:
     Parameters:
     x(Union[int, float, complex]): The value to be checked.
 
-    Returns: 
+    Returns:
     None
 
     This is a function that raises a TypeError when the data in the matrix is of non-numeric type.
     """
 
     # Check if the element belongs to one of the numeric classes
-    if (
-        not ((type(x) is int) or (type(x) is float) or (type(x) is complex))
-    ):  
+    if not ((type(x) is int) or (type(x) is float) or (type(x) is complex)):
         # Raise an error if the element is of a non-numeric type
         raise TypeError
 
@@ -50,7 +49,7 @@ def check_validity(matrix: List[List[Union[int, float, complex]]]) -> None:
     Returns:
     None
 
-    This function raises a ValueError if all the rows of the matrix do not have 
+    This function raises a ValueError if all the rows of the matrix do not have
     an equal number of elements or if the matrix contains non-numeric elements.
     """
 
@@ -65,8 +64,10 @@ def check_validity(matrix: List[List[Union[int, float, complex]]]) -> None:
             isnum(element)
 
 
-def test_matrices(matrix1: List[List[Union[int, float, complex]]], 
-                  matrix2: List[List[Union[int, float, complex]]]) -> None:
+def test_matrices(
+    matrix1: List[List[Union[int, float, complex]]],
+    matrix2: List[List[Union[int, float, complex]]],
+) -> None:
     """Checks compatibility and validity of two matrices for multiplication.
 
     Parameters:
@@ -76,11 +77,13 @@ def test_matrices(matrix1: List[List[Union[int, float, complex]]],
     Returns:
     None
 
-    This function checks whether the matrices are valid and compatible for multiplication. 
+    This function checks whether the matrices are valid and compatible for multiplication.
     Raises a ValueError if they are not.
     """
 
-    check_validity(matrix1)  # Checking for uniform rows and columns, non-numeric elements
+    check_validity(
+        matrix1
+    )  # Checking for uniform rows and columns, non-numeric elements
     check_validity(matrix2)
 
     if not matrix_shape(matrix1)[1] == matrix_shape(matrix2)[0]:
@@ -107,8 +110,10 @@ def init_result(rows: int, cols: int) -> List[List[int]]:
     return res
 
 
-def multiply(matrix1: List[List[Union[int, float, complex]]], 
-             matrix2: List[List[Union[int, float, complex]]]) -> List[List[Union[int, float, complex]]]:
+def multiply(
+    matrix1: List[List[Union[int, float, complex]]],
+    matrix2: List[List[Union[int, float, complex]]],
+) -> List[List[Union[int, float, complex]]]:
     """Multiplies two matrices.
 
     Parameters:
@@ -131,8 +136,10 @@ def multiply(matrix1: List[List[Union[int, float, complex]]],
     return result
 
 
-def matrix_multiply(matrix1: List[List[Union[int, float, complex]]], 
-                    matrix2: List[List[Union[int, float, complex]]]) -> List[List[Union[int, float, complex]]]:
+def matrix_multiply(
+    matrix1: List[List[Union[int, float, complex]]],
+    matrix2: List[List[Union[int, float, complex]]],
+) -> List[List[Union[int, float, complex]]]:
     """Performs matrix multiplication.
 
     Parameters:
@@ -141,10 +148,12 @@ def matrix_multiply(matrix1: List[List[Union[int, float, complex]]],
 
     Returns:
     List[List[Union[int, float, complex]]]: The resulting matrix after multiplication.
-    
+
     This function multiplies two matrices after validating them and returns the result.
     """
 
-    test_matrices(matrix1, matrix2)  # Running the test function to check for compatibility and validity of the input matrices
+    test_matrices(
+        matrix1, matrix2
+    )  # Running the test function to check for compatibility and validity of the input matrices
 
     return multiply(matrix1, matrix2)
