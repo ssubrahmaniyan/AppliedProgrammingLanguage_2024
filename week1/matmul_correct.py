@@ -1,14 +1,44 @@
-def matrix_shape(matrix):
+from typing import List
+from typing import Union
+
+def matrix_shape(matrix: List[List]) -> List:
+    """Returns the shape of the matrix.
+
+    Parameters:
+    matrix(List[List]): A matrix denoted in the form of a list of list.
+
+    Returns:
+    List: The number of rows and columns in the matrix, in that order.
+
+    This is a function that returns the shape of the matrix in the form of a list when it is validly defined.
+    """
+
+    # Check if the matrix has no columns or no rows
     if not len(matrix) == 0 and not len(matrix[0]) == 0:
+        # Return the shape of the matrix as a list that can be unpacked
         return [len(matrix), len(matrix[0])]
     else:
-        raise ValueError  # Raising error for empty matrix
+        # Raise a ValueError when the matrix is defined invalidly
+        raise ValueError
 
 
-def isnum(x):
+def isnum(x: Union[int, float, complex]) -> None:
+    """Checks if the given element is numeric.
+
+    Parameters:
+    x(Union[int, float, complex]): The value to be checked
+
+    Returns: 
+    None
+
+    This is a function that raises a TypeError when the data in the matrix is of non-numeric type.
+    """
+
+    # Check if the element belongs to one of the numeric classes
     if (
-        not (type(x) is int) and not (type(x) is float) and not (type(x) is complex)
-    ):  # Explore the possibility of extending to complex number matrices
+        not ((type(x) is int) or (type(x) is float) or (type(x) is complex))
+    ):  
+        # Raise an error if the element is of a non-numeric type
         raise TypeError
 
 
