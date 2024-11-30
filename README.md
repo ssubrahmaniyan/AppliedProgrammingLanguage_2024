@@ -7,6 +7,6 @@ Author : **Sanjeev Subrahmaniyan S B**
 Contact me at ee23b102@smail.iitm.ac.in
 
 ## Table of contents
-A brief desciption of all the different programs in each week is as follows:
-
-1. Implementing a 2-D matrix multiplier without using the numpy library 
+A brief desciption of all the different programs are as follows:
+matmul: Implementing a 2-D matrix multiplier without using the numpy library 
+spicesim: Simulating a SPICE circuit solver with netlist inputs
